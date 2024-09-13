@@ -1,0 +1,6 @@
+#The count method returns the number of times a specified value appears in a string or list.
+#Example
+def is_valid(p_email):
+  if p_email.count('@') == 1:
+      return True
+  return False
