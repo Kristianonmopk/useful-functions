@@ -1,0 +1,38 @@
+#The type() function returns the data type of the object.
+
+#As shown below, the type() function is used to compare the data types of my_tuple and my_dict
+
+my_tuple = (10, 'Hello', 45, 'Hi')
+my_dict = {1: 'One', 2: 'Two', 3: 'Three'}
+# Check if the variables have the same object type
+if type(my_tuple) is not type(my_dict):
+  print("The variables have different object types.")
+else:
+  print("The variables have the same object type.")
+
+
+
+#however it is important to note that the type() function is not a substitute for the isinstance() function, which can be used to check the object type of an item
+  
+#isinstance is usually the preferred way to compare types. It's not only faster but also considers inheritance, which is often the desired behavior. In Python, you usually want to check if a given object behaves like a string or a list, not necessarily if it's exactly a string. So instead of checking for string and all it's custom subclasses, you can just use isinstance.
+  
+#The isinstance() function takes two arguments: the object you want to check and the type you want to check against.
+
+#Below is an example of the isinstance() function:
+a = isinstance(5, int)
+print(a)
+a = type(5)
+print(a)
+#Below is another example:
+b = isinstance("Hello", (float, int, str, list, dict, tuple))
+#Below is a final example:
+class myObj:
+  name = "John"
+y = myObj()
+x = isinstance(y, myObj)
+z = (type(y) is type(myObj))
+print(x)
+print(z)
+
+
+#On the other hand, when you want to explicitly check that a given variable is of a specific type (and not its subclass) - use the type() function.
